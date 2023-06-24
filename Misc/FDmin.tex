@@ -1,0 +1,119 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+\title{DBMS Project Functional Dependency and Normal Forms}
+\author{Group 7}
+\date{April 2023}
+
+\begin{document}
+
+\maketitle
+
+\section*{All Functional Dependencies}
+
+\subsection*{Farmer(FarmerID,Name,farmingType,City,LocationID,Rating)}
+FarmerID $\longrightarrow$  Name            \\
+FarmerID $\longrightarrow$  FarmingType     \\
+FarmerID $\longrightarrow$  City            \\
+FarmerID $\longrightarrow$  LocationID      \\
+FarmerID $\longrightarrow$  Rating          \\
+
+Key : \textbf{FarmerID}\\
+This relation is in \textbf{BCNF}
+
+\subsection*{Buyer(BuyerID,Name,BuyerType,City,LocationID)}
+BuyerID $\longrightarrow$  Name            \\
+BuyerID $\longrightarrow$  BuyerType            \\
+BuyerID $\longrightarrow$  City            \\
+BuyerID $\longrightarrow$  LocationID           \\
+
+Key : \textbf{BuyerID}\\
+This relation is in \textbf{BCNF}
+
+
+\subsection*{Crop(cropName,CropCategory,ShelfLife)}
+CropID $\longrightarrow$  CropName            \\
+CropID $\longrightarrow$  CropCategory            \\
+CropID $\longrightarrow$  ShelfLife     \\
+
+Key : \textbf{CropID}\\
+This relation is in \textbf{BCNF}
+
+ \subsection*{Location(LocationID,State,RelativeDistance)}
+ LocationID $\longrightarrow$ District  \\
+ LocationID $\longrightarrow$ State  \\
+ LocationID $\longrightarrow$ RelativeDistance  \\
+ 
+Key : \textbf{LocationID}\\
+This relation is in \textbf{BCNF}
+
+\subsection*{Transaction(TransactionID,BidID,Timedate,PaymentMethod,ShippingCharges,\\TransactionAmount,PaytmentStatus)}
+TransactionID $\longrightarrow$  BidID        \\
+TransactionID $\longrightarrow$  TimeDate       \\
+TransactionID $\longrightarrow$  PaymentMethod   \\
+TransactionID $\longrightarrow$  ShippingCharges        \\
+TransactionID $\longrightarrow$  TransactionAmount      \\
+TransactionID $\longrightarrow$  PaymentStatus        \\
+
+Key : \textbf{TransactionID}\\
+This relation is in \textbf{BCNF}
+
+\subsection*{Market(farmerID,CropID,HarvestTime,StartPrice,Quantity,Status)}
+ \{FarmerID , CropID , HarvestTime\} $\longrightarrow$  StartPrice        \\
+ \{FarmerID , CropID , HarvestTime\} $\longrightarrow$  Quantity     \\
+ \{FarmerID , CropID , HarvestTime\} $\longrightarrow$  Status        \\
+
+Key : \textbf{\{FarmerID , CropID , HarvestTime\}}\\
+This relation is in \textbf{BCNF}
+
+
+
+ \subsection*{Bid(BidID,BuyerID,BidStatus,Quantity,BidAmount,BidDate,FarmerID,CropID,\\HarvestTime)}
+BidID $\longrightarrow$  BuyerID        \\
+BidID $\longrightarrow$  BidStatus        \\
+BidID $\longrightarrow$  Quantity        \\
+BidID $\longrightarrow$  BidAmount       \\
+BidID $\longrightarrow$  BidDate        \\
+BidID $\longrightarrow$  FarmerID        \\
+BidID $\longrightarrow$  CropID        \\
+BidID $\longrightarrow$  HarvestTime        \\
+
+Key : \textbf{BidID}        \\
+This relation is in \textbf{BCNF}
+
+\subsection*{CropRequested(BuyerID,FarmerID,CropID,Quantityrequested,AffordablePrice,\\Status,Time)}
+ \{BuyerID , FarmerID , CropID\} $\longrightarrow$  QuantityRequested \\
+ \{BuyerID , FarmerID , CropID\} $\longrightarrow$  AffordableAtPrice \\
+ \{BuyerID , FarmerID , CropID\} $\longrightarrow$  Status \\
+ \{BuyerID , FarmerID , CropID\} $\longrightarrow$  Time \\
+
+Key : \textbf{\{BuyerID , FarmerID , CropID\}}\\
+This relation is in \textbf{BCNF}
+
+
+ \subsection*{FarmerEmail(FarmerID,Email)}
+
+Key : \textbf{\{FarmerID,Email\}}\\
+This relation is in \textbf{BCNF}
+ 
+
+ \subsection*{FarmerPhoneNo(FarmerID,PhoneNo)}
+
+Key : \textbf{\{FarmerID,PhoneNo\}}\\
+This relation is in \textbf{BCNF}
+ 
+\subsection*{BuyerEmail(BuyerID,Email)}
+
+Key : \textbf{\{BuyerID,Email\}}\\
+This relation is in \textbf{BCNF}
+
+ \subsection*{BuyerPhoneNo(BuyerID,PhoneNo)}
+ 
+Key : \textbf{\{BuyerID,PhoneNo\}}\\
+This relation is in \textbf{BCNF}
+
+
+
+
+
+\end{document}

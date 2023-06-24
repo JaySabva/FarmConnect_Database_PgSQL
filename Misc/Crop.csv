@@ -1,0 +1,144 @@
+﻿CropID,CropName,CropCategory,ShelfLife
+1,Wheat,Cereals,365
+2,Sorghum,Cereals,365
+3,Oats,Cereals,365
+4,Maize,Cereals,365
+5,Barley,Cereals,365
+6,Millet,Cereals,365
+7,Quiona,Cereals,365
+8,Corn,Cereals,365
+9,Jowar,Cereals,365
+10,Beet,Roots_and_Tubers,15
+11,Carrot,Roots_and_Tubers,15
+12,Potato,Roots_and_Tubers,15
+13,Turnips,Roots_and_Tubers,15
+14,Radishes,Roots_and_Tubers,15
+15,Ginger,Roots_and_Tubers,15
+16,Turmeric,Roots_and_Tubers,15
+17,Sweet Potato,Roots_and_Tubers,15
+18,Elephant Yam,Roots_and_Tubers,15
+19,Taro,Roots_and_Tubers,15
+20,Sugar beet,Sugar_Crops,60
+21,Sugarcane,Sugar_Crops,60
+22,Sweet Sorghum,Sugar_Crops,60
+23,Sugar maple,Sugar_Crops,60
+24,Sugar Palm,Sugar_Crops,60
+25,Mung daal,Pulses,365
+26,Chawli daal,Pulses,365
+27,Masoor daal,Pulses,365
+28,Sabat masoor,Pulses,365
+29,Toor daal,Pulses,365
+30,Rajma,Pulses,365
+31,Hari matar,Pulses,365
+32,Safed Matar,Pulses,365
+33,Chana daal,Pulses,365
+34,Urad daal,Pulses,365
+35,Chori daal,Pulses,365
+36,Moth daal,Pulses,365
+37,Kala chana,Pulses,365
+38,Safed chana,Pulses,365
+39,Labhia,Pulses,365
+40,Poha,Pulses,365
+41,Til,Pulses,365
+42,Sago,Pulses,365
+43,Bhatt daal,Pulses,365
+44,Vaal daal,Pulses,365
+45,Almond,Nuts,120
+46,Cashew,Nuts,120
+47,WalNuts,Nuts,120
+48,Pecans,Nuts,120
+49,ChestNuts,Nuts,120
+50,Coconut,Nuts,120
+51,HazelNuts,Nuts,120
+52,Raisins,Nuts,120
+53,Dried fig,Nuts,120
+54,Flax seed,Nuts,120
+55,Date,Nuts,120
+56,Dried fig,Nuts,120
+57,Pistachio,Nuts,120
+58,Betel nut,Nuts,120
+59,Lotus seed,Nuts,120
+60,Poopy seed,Nuts,120
+61,Waterrmelon seed,Nuts,120
+62,Soyabean,Oil_Bearing_Crop,240
+63,Cotton seed,Oil_Bearing_Crop,240
+64,Sunflower seed,Oil_Bearing_Crop,240
+65,PeaNuts,Oil_Bearing_Crop,240
+66,Mustard,Oil_Bearing_Crop,240
+67,Coconut,Oil_Bearing_Crop,240
+68,Palm,Oil_Bearing_Crop,240
+69,Niger,Oil_Bearing_Crop,240
+70,Linseed,Oil_Bearing_Crop,240
+71,Olive,Oil_Bearing_Crop,240
+72,Lettuce,Vegetables,14
+73,Spinach,Vegetables,14
+74,Cabbage,Vegetables,14
+75,Cauliflower,Vegetables,14
+76,Pumpkin,Vegetables,14
+77,Cucumber,Vegetables,14
+78,Celery ,Vegetables,14
+79,Aspargus,Vegetables,14
+80,Onion,Vegetables,180
+81,Garlic,Vegetables,180
+82,Tomato,Vegetables,14
+83,Carrot,Vegetables,14
+84,Eggplant,Vegetables,14
+85,Corn,Vegetables,14
+86,Mushroom,Vegetables,14
+87,Pepper,Vegetables,14
+88,Coriander,Vegetables,14
+89,Lemon,Vegetables,14
+90,Bitter gourd,Vegetables,14
+91,Kantola,Vegetables,14
+92,Mint,Vegetables,14
+93,Lady's finger,Vegetables,14
+94,Capsicum,Vegetables,14
+95,Turnips,Vegetables,14
+96,Bottle gourd,Vegetables,14
+97,Apple,Fruits,14
+98,Banana,Fruits,7
+99,Blue berry,Fruits,7
+100,Custard Apple,Fruits,7
+101,Cherry,Fruits,14
+102,Crane berry,Fruits,14
+103,Dragon fruit,Fruits,14
+104,Fig,Fruits,14
+105,Guava,Fruits,14
+106,Grapes,Fruits,14
+107,Jack fruit,Fruits,14
+108,Jambu,Fruits,14
+109,Kiwi,Fruits,14
+110,Watermelon,Fruits,21
+111,Mango,Fruits,21
+112,Orange,Fruits,14
+113,Pineapple,Fruits,14
+114,Peach,Fruits,14
+115,Pomegranate,Fruits,14
+116,Papaya,Fruits,14
+117,Tamarind,Fruits,14
+118,Strawberry,Fruits,14
+119,Star fruit,Fruits,14
+120,Cotton,Fibers,365
+121,Jute,Fibers,365
+122,Coir,Fibers,365
+123,Hemp,Fibers,365
+124,Flax ,Fibers,365
+125,Black peppercorns,Spices,180
+126,Black cardamom,Spices,180
+127,Green cardamom,Spices,180
+128,Nutmeg,Spices,180
+129,Cinnamon,Spices,180
+130,Cloves,Spices,180
+131,Cumin,Spices,180
+132,Coriander,Spices,180
+133,Mustard,Spices,180
+134,Turmeric,Spices,180
+135,Chilli,Spices,180
+136,Cloves,Spices,180
+137,Fenugreek leaves,Spices,180
+138,Fennel seed,Spices,180
+139,Curry Leaves,Spices,180
+140,Hing,Spices,180
+141,Mango powder,Spices,180
+142,Star Anise,Spices,180
+143,Ajwain,Spices,180
