@@ -1,0 +1,45 @@
+﻿TransactionID,BidID,TotalPayableCharges,PaymentMethod,PaymentStatus,TransTime
+1,1,40000,Debit Card,successful,2021-02-05 10:05:00
+2,2,48000,NetBanking,successful,2021-02-05 10:08:00
+3,5,140000,UPI,successful,2021-02-05 10:56:00
+4,6,160000,DD,successful,2021-02-05 10:59:00
+5,13,42000,Debit Card,successful,2021-02-06 16:56:00
+6,14,42000,NetBanking,successful,2021-02-06 16:59:00
+7,16,200000,UPI,successful,2021-02-12 16:08:00
+8,18,70000,DD,successful,2021-02-13 12:08:00
+9,19,80000,Debit Card,successful,2021-02-13 12:11:00
+10,23,156000,NetBanking,successful,2021-02-13 12:59:00
+11,24,154000,UPI,successful,2021-02-14 12:05:00
+12,25,7500,DD,successful,2021-02-16 13:56:00
+13,26,7500,Debit Card,successful,2021-02-16 13:59:00
+14,27,19500,NetBanking,successful,2021-02-17 13:20:00
+15,28,19500,UPI,successful,2021-02-17 13:23:00
+16,29,19500,DD,successful,2021-02-17 13:26:00
+17,30,26000,Debit Card,successful,2021-02-20 13:05:00
+18,31,26000,NetBanking,successful,2021-02-20 13:08:00
+19,32,26000,UPI,successful,2021-02-20 13:11:00
+20,33,26000,DD,successful,2021-02-20 13:14:00
+21,34,26000,Debit Card,successful,2021-02-20 13:17:00
+22,35,26000,NetBanking,successful,2021-02-20 13:20:00
+23,38,160000,UPI,successful,2021-02-21 11:35:00
+24,39,204000,DD,successful,2021-02-21 11:38:00
+25,40,22500,Debit Card,successful,2021-02-21 11:59:00
+26,42,135000,NetBanking,successful,2021-02-22 11:08:00
+27,45,161000,UPI,successful,2021-02-23 11:17:00
+28,46,164000,DD,successful,2021-02-23 11:59:00
+29,48,119600,Debit Card,successful,2021-02-17 23:03:20
+30,49,119600,NetBanking,successful,2021-02-18 23:03:20
+31,50,18700,UPI,successful,2021-02-19 23:03:20
+32,53,260000,DD,successful,2021-02-24 10:47:00
+33,57,146400,Debit Card,successful,2021-02-26 10:35:00
+34,58,155000,NetBanking,successful,2021-02-26 10:38:00
+35,60,366000,UPI,successful,2021-02-27 10:14:00
+36,61,65000,DD,successful,2021-02-27 10:38:00
+37,62,38000,Debit Card,successful,2021-02-27 11:38:00
+38,64,20000,NetBanking,successful,2021-02-28 10:29:00
+39,65,20000,UPI,successful,2021-02-28 10:32:00
+40,70,102000,DD,successful,2021-02-28 12:59:00
+41,71,82000,Debit Card,successful,2021-03-06 12:50:00
+42,74,99200,NetBanking,successful,2021-03-06 12:59:00
+43,75,120000,UPI,successful,2021-03-07 12:08:00
+44,11,180000,DD,successful,2021-02-06 12:59:00
