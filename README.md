@@ -20,3 +20,6 @@ FarmConnect is a digital platform that connects farmers and buyers, enabling the
 
 # Technologies Used
 Database Management System: PostgreSQL
+
+# GitHub Repository
+https://github.com/JaySabva/FarmConnect_Database_PgSQL
