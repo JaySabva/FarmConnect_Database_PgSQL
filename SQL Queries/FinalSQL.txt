@@ -1,0 +1,206 @@
+1) Retrive a list of farmer who have a quantity of available wheat exceeding 100 and a price per kg lower than 120
+SQL :
+SELECT farmer.farmerid,
+       farmer."name",
+       market.qtyremaining,
+       market.start_price
+FROM   farmer
+       natural JOIN market
+WHERE  market.cropname = 'Wheat'
+       AND market.qtyremaining >= 100
+       AND start_price < 120; 
+
+2)Retrieve the names of farmers who have crops with the longest remaining shelf life, provided that the shelf life is positive and the crops are currently available. The list is sorted in descending order based on the remaining shelf life and limited to the top 10 results.
+SQL:
+SELECT farmer."name",
+       cropname,
+       ( shelflife - ( CURRENT_DATE - harvesttime ) ) AS RemainingShelfLife
+FROM   farmer
+       NATURAL JOIN market
+       NATURAL JOIN crop
+WHERE  ( shelflife - ( CURRENT_DATE - harvesttime ) ) > 0
+       AND status = 'available'
+ORDER  BY remainingshelflife DESC
+LIMIT  10; 
+
+3)Retrieve the information of the farmers who fall in the same district with Buyer with specified ID 209
+SQL:
+SELECT farmer.farmerid,
+       farmer."name" AS FarmerName,
+       farmer.city,
+       farmer.rating
+FROM   farmer
+       INNER JOIN location
+               ON farmer.locationid = location.locationid
+       INNER JOIN buyer
+               ON location.district = (SELECT district
+                                       FROM   location
+                                       WHERE  locationid = buyer.locationid)
+WHERE  buyer.buyerid = 209; 
+
+4)Retrieve the information of the Buyer who have purchased 20 kg or more of wheat at a price of Rs.22 or higher per kg.
+SELECT buyerid,
+       buyer."name",
+       quantity,
+       bidamount,
+       totalpayablecharges
+FROM   buyer
+       natural JOIN bid
+       JOIN TRANSACTION
+         ON bid.bidid = TRANSACTION.bidid
+WHERE  bid.quantity >= 20
+       AND bid.cropname = 'Wheat'
+       AND bid.bidamount >= 22; 
+
+5)Retrieve the number of farmer sold 'Wheat' more than 10 kg till Now.
+
+SELECT Count(farmerid) AS NoOfFarmerSoldWheat
+FROM   (SELECT farmerid,
+               Sum(bid.quantity) AS Sold_Qty
+        FROM   market
+               natural JOIN bid
+        WHERE  cropname = 'Wheat'
+               AND bid.bidstatus = 'accepted'
+        GROUP  BY farmerid) AS SoldQtyTable
+WHERE  sold_qty >= 10; 
+
+6) Retrieve the information of the buyer who requested for Millet which are not yet accepeted by any farmer.
+SQL:
+SELECT croprequested.buyerid,
+       buyer."name",
+       qtyrequired,
+       price,
+       reqtime
+FROM   croprequested
+       natural JOIN buyer
+WHERE  cropname = 'Millet'
+       AND status = 'available'; 
+
+7) Retrieve the information for the buyer who is located in the same district as the farmer (let's say the farmer's ID is 12) and has requested a crop whose status is available.
+SQL:
+SELECT buyerid,
+       buyer."name",
+       buyer.city,
+       cropname,
+       price,
+       qtyrequired
+FROM   croprequested
+       natural JOIN buyer
+       natural JOIN location
+       natural JOIN (SELECT locationid,
+                            farmerid
+                     FROM   farmer
+                     WHERE  farmerid = 12) AS F
+WHERE  status = 'available'; 
+
+8) Retrieve the Total amount of money a Buyer has requested on a particular day assuming that all the request will be accepeted.
+
+SELECT SUM(QTYREQUIRED * PRICE) AS TOTALMONEY
+FROM CROPREQUESTED
+WHERE BUYERID = 2
+	AND date(REQTIME) = '2022-10-05';
+
+9) Retrieve the total income of all farmer in year 2021.
+SELECT farmerid,
+       Sum(totalpayablecharges) AS TOTALINCOME
+FROM   TRANSACTION
+       natural JOIN bid
+WHERE  Date(TRANSACTION.transtime) BETWEEN '2021-01-01' AND '2022-12-31'
+       AND paymentstatus = 'successful'
+GROUP  BY farmerid; 
+
+10) Retrieve the different crop whose cropcategory is Cereals and are available in market and seller having rating greater than 4 and resident of Chhattisgarh.
+SQL :
+SELECT farmerid,
+       cropname
+FROM   (SELECT farmerid
+        FROM   location
+               natural JOIN farmer
+        WHERE  "state" = 'Chhattisgarh'
+               AND farmer.rating > 2) AS F
+       natural JOIN farmer
+       natural JOIN market
+       natural JOIN crop
+WHERE  cropcategory = 'Cereals'
+       AND market.status = 'available'; 
+
+11) Retrieve the total Transaction and Total Transaction amount done by buyers on any particular day.
+SQL :
+SELECT buyer.buyerid,
+       Count(transactionid)     AS TOTALTRANSACTION,
+       Sum(totalpayablecharges) AS TotalAMount
+FROM   buyer
+       INNER JOIN bid
+               ON buyer.buyerid = bid.buyerid
+       INNER JOIN TRANSACTION
+               ON bid.bidid = TRANSACTION.bidid
+WHERE  Date(transtime) = '2021-02-05'
+GROUP  BY buyer.buyerid; 
+
+12) Retrieve the total money a specific buyer has spent on Rice in a particular month.
+SQL :
+SELECT Sum(totalpayablecharges) AS TotalAmount
+FROM   TRANSACTION
+       INNER JOIN bid
+               ON TRANSACTION.bidid = bid.bidid
+WHERE  bid.buyerid = 1
+       AND bid.cropname = 'Wheat'
+       AND Date(transtime) BETWEEN '2021-02-02' AND '2021-10-30' 
+
+13) Retrieve the total income and information of farmer  who has sold wheat and has Conventional farming type For a given year.
+
+SQL :
+SELECT farmer.farmerid,
+       farmer."name",
+       farmingtype,
+       Sum(T.totalpayablecharges) AS Total_Income
+FROM   farmer
+       INNER JOIN market
+               ON farmer.farmerid = market.farmerid
+       INNER JOIN bid B
+               ON market.farmerid = B.farmerid
+                  AND market.cropname = B.cropname
+                  AND market.harvesttime = B.bidtime
+       INNER JOIN TRANSACTION T
+               ON B.bidid = T.bidid
+WHERE  market.cropname = 'wheat'
+       AND farmer.farmingtype = 'conventional'
+GROUP  BY farmer.farmerid,
+          farmer."name",
+          farmer.farmingtype 
+
+14) Retrieve the Top 10 Buyer of a specific crop on maximum quantity.
+SQL :
+SELECT buyer.buyerid,
+       buyer."name",
+       Max(quantity) AS MaxPurchase
+FROM   buyer
+       JOIN bid
+         ON buyer.buyerid = bid.buyerid
+       JOIN transaction
+         ON bid.bidid = transaction.bidid
+WHERE  bid.cropname = 'Wheat'
+       AND bid.bidstatus = 'accepted'
+GROUP  BY buyer.buyerid,
+          buyer."name"
+ORDER  BY maxpurchase DESC
+LIMIT  10; 
+
+15) Retrieve the information of the buyer who has made transaction greater or equal of 50000 ruppes.
+SQL :
+SELECT buyer.buyerid,
+       buyer."name",
+       totalpayablecharges AS MaxPurchase,
+       Date(transtime)
+FROM   buyer
+       JOIN bid
+         ON buyer.buyerid = bid.buyerid
+       JOIN transaction
+         ON bid.bidid = transaction.bidid
+WHERE  bid.cropname = 'Wheat'
+       AND bid.bidstatus = 'accepted'
+       AND transaction.totalpayablecharges > 50000
+GROUP  BY buyer."name",
+          totalpayablecharges,
+          buyer.buyerid,
+          transtime
